@@ -432,7 +432,7 @@
         .mvv-card h4 { font-family: 'Lora', serif; font-size: 1.3rem; color: var(--forest-green); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
         .mvv-card h4 i { color: var(--gold); font-size: 1.2rem; }
         .mvv-card p, .mvv-card ul { color: var(--text-mid); font-size: 0.95rem; line-height: 1.8; }
-        .mvv-card ul { list-style: none; }
+        .mvv-card ul { list-style: none; text-align: left; }
         .mvv-card ul li { margin-bottom: 5px; padding-left: 4px; }
         .mvv-card ul li strong { color: var(--forest-green); font-size: 1rem; }
 
@@ -519,12 +519,7 @@
             position: relative;
             overflow: hidden;
         }
-        .footer-palm {
-            position: absolute;
-            bottom: 0; opacity: 0.12;
-        }
-        .footer-palm-left  { left: 0; }
-        .footer-palm-right { right: 0; transform: scaleX(-1); }
+
         .footer-tagline {
             font-family: 'Corinthia', cursive;
             font-size: 2.8rem;
@@ -870,26 +865,6 @@
     <!-- ── FOOTER ── -->
     <footer>
         <!-- Palm trees in footer -->
-        <svg class="footer-palm-left" width="140" height="260" viewBox="0 0 180 340" xmlns="http://www.w3.org/2000/svg">
-            <rect x="82" y="120" width="16" height="220" rx="8" fill="#C8A96E"/>
-            <path d="M90 120 Q60 80 20 60 Q50 90 80 110" fill="#7AB55C" opacity="0.9"/>
-            <path d="M90 110 Q50 60 10 30 Q45 70 85 100" fill="#8FC96A"/>
-            <path d="M90 115 Q130 70 170 50 Q140 85 95 108" fill="#7AB55C" opacity="0.9"/>
-            <path d="M90 105 Q140 55 175 25 Q145 65 92 98" fill="#8FC96A"/>
-            <path d="M90 118 Q70 60 55 10 Q75 65 88 112" fill="#7AB55C"/>
-            <path d="M90 112 Q110 55 125 5 Q105 60 92 106" fill="#8FC96A"/>
-            <circle cx="90" cy="125" r="6" fill="#A07840"/>
-        </svg>
-        <svg class="footer-palm-right" width="140" height="260" viewBox="0 0 180 340" xmlns="http://www.w3.org/2000/svg">
-            <rect x="82" y="120" width="16" height="220" rx="8" fill="#C8A96E"/>
-            <path d="M90 120 Q60 80 20 60 Q50 90 80 110" fill="#7AB55C" opacity="0.9"/>
-            <path d="M90 110 Q50 60 10 30 Q45 70 85 100" fill="#8FC96A"/>
-            <path d="M90 115 Q130 70 170 50 Q140 85 95 108" fill="#7AB55C" opacity="0.9"/>
-            <path d="M90 105 Q140 55 175 25 Q145 65 92 98" fill="#8FC96A"/>
-            <path d="M90 118 Q70 60 55 10 Q75 65 88 112" fill="#7AB55C"/>
-            <path d="M90 112 Q110 55 125 5 Q105 60 92 106" fill="#8FC96A"/>
-            <circle cx="90" cy="125" r="6" fill="#A07840"/>
-        </svg>
 
         <div style="position:relative; z-index:2;">
             <div class="footer-tagline">"From Harvest to Art"</div>
