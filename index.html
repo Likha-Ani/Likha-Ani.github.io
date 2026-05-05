@@ -95,24 +95,15 @@
         header {
             background: linear-gradient(160deg, var(--off-white) 60%, var(--sand-light) 100%);
             border-bottom: 3px solid var(--sand);
-            padding: 36px 20px 28px;
+            padding: 36px 40px 28px;
             text-align: center;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 4px 24px rgba(139,94,60,0.12);
-            overflow: hidden;
-        }
-
-        /* ── LOGO + TITLE: stacked vertically ── */
-        .header-brand {
-            display: flex;
-            flex-direction: column;   /* ← changed from row to column */
+            flex-direction: row;
             align-items: center;
             justify-content: center;
-            gap: 16px;                /* ← tightened gap for stacked layout */
-            animation: fadeDown 0.8s ease both;
+            gap: 24px;
+            box-shadow: 0 4px 24px rgba(139,94,60,0.12);
+            overflow: hidden;
         }
         header h1 {
             font-family: 'Corinthia', cursive;
@@ -120,13 +111,15 @@
             color: var(--forest-green);
             text-shadow: 3px 3px 0px rgba(212,184,150,0.5);
             line-height: 1;
+            animation: fadeDown 0.8s ease both;
         }
         header img.logo {
-            height: 160px;
+            height: 150px;
             width: auto;
             border-radius: 50%;
             border: 4px solid var(--sand);
             box-shadow: 0 8px 32px rgba(58,92,42,0.18);
+            animation: fadeUp 0.8s ease 0.2s both;
             background: white;
             flex-shrink: 0;
         }
@@ -192,6 +185,7 @@
             overflow: hidden;
             white-space: nowrap;
             width: 0;
+            max-width: 90vw;
             text-shadow: 1px 2px 8px rgba(0,0,0,0.4);
             animation: typewriter 3.5s steps(50) 0.5s forwards, blink 0.75s step-end infinite;
         }
@@ -240,6 +234,7 @@
         }
         .why-section .section-title { color: var(--off-white); }
         .why-section .section-divider { background: linear-gradient(90deg, var(--gold), var(--sand-light)); }
+        /* 5 cards in a nice 3-2 layout */
         .why-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -247,6 +242,9 @@
             max-width: 960px;
             margin: 0 auto;
         }
+        .why-grid .why-card:nth-child(4) { grid-column: 1 / 2; margin-left: auto; width: 100%; }
+        .why-grid .why-card:nth-child(5) { grid-column: 2 / 3; margin-right: auto; width: 100%; }
+        /* Center the last 2 cards row */
         .why-grid-bottom {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -269,7 +267,7 @@
             box-shadow: 0 16px 40px rgba(0,0,0,0.2);
         }
         .why-card .icon-wrap {
-            width: 70px; height: 70px;
+            width: 64px; height: 64px;
             background: rgba(201,168,76,0.15);
             border: 2px solid rgba(201,168,76,0.4);
             border-radius: 50%;
@@ -310,6 +308,7 @@
             border: 3px solid var(--sand);
             box-shadow: 6px 6px 20px rgba(139,94,60,0.15);
             object-fit: cover;
+            object-position: center top;
             aspect-ratio: 4/3;
         }
         .problem-section .text p {
@@ -420,7 +419,6 @@
         .mvv-card h4 i { color: var(--gold); font-size: 1.2rem; }
         .mvv-card p, .mvv-card ul { color: var(--text-mid); font-size: 0.95rem; line-height: 1.8; }
         .mvv-card ul { list-style: none; }
-        .mvv-card ul { text-align: left; }
         .mvv-card ul li { margin-bottom: 5px; padding-left: 4px; }
         .mvv-card ul li strong { color: var(--forest-green); font-size: 1rem; }
 
@@ -504,8 +502,15 @@
             padding: 50px 20px 30px;
             margin-top: 0;
             font-size: 0.9rem;
-            /* position: relative and overflow: hidden removed — no palms needed */
+            position: relative;
+            overflow: hidden;
         }
+        .footer-palm {
+            position: absolute;
+            bottom: 0; opacity: 0.12;
+        }
+        .footer-palm-left  { left: 0; }
+        .footer-palm-right { right: 0; transform: scaleX(-1); }
         .footer-tagline {
             font-family: 'Corinthia', cursive;
             font-size: 2.8rem;
@@ -546,18 +551,25 @@
 
             header { padding: 24px 16px 20px; gap: 10px; }
             header h1 { font-size: 3.8rem; }
-            header img.logo { height: 80px; }
-            .header-brand { gap: 10px; }
+            header img.logo { height: 100px; }
 
             nav { padding: 10px 6px; }
             nav a { font-size: 0.75rem; padding: 5px 10px; margin: 2px; }
 
-            .hero { height: 260px; }
+            .hero {
+                height: auto;
+                min-height: 220px;
+                padding: 40px 20px;
+            }
             .hero h2 {
-                font-size: 0.98rem;
-                white-space: normal; width: auto !important;
-                animation: none; border-right: none;
-                padding: 10px 14px;
+                font-size: 1.1rem;
+                white-space: normal;
+                width: auto !important;
+                animation: none;
+                border-right: 4px solid var(--gold);
+                padding: 14px 18px;
+                max-width: 100%;
+                line-height: 1.5;
             }
 
             .why-section { padding: 60px 16px; }
@@ -595,8 +607,7 @@
         ════════════════════ */
         @media (max-width: 400px) {
             header h1 { font-size: 2.8rem; }
-            header img.logo { height: 64px; }
-            .header-brand { gap: 10px; }
+            header img.logo { height: 80px; }
             nav a { font-size: 0.68rem; padding: 4px 8px; }
             .why-grid { grid-template-columns: 1fr; }
         }
@@ -630,11 +641,8 @@
 
     <!-- ── HEADER ── -->
     <header>
-        <!-- Logo stacked ABOVE the title -->
-        <div class="header-brand">
-            <img src="images/logo.png" alt="Likha-Ani Logo" class="logo">
-            <h1>Likha-Ani</h1>
-        </div>
+        <h1>Likha-Ani</h1>
+        <img src="images/logo.png" alt="Likha-Ani Logo" class="logo">
     </header>
 
     <nav>
@@ -652,6 +660,7 @@
 
     <!-- ── WHY CHOOSE US ── -->
     <section class="why-section" id="why">
+        <!-- Palm trees inside why section -->
         <svg class="palm-left" width="180" height="340" viewBox="0 0 180 340" xmlns="http://www.w3.org/2000/svg">
             <rect x="82" y="120" width="16" height="220" rx="8" fill="#C8A96E"/>
             <path d="M90 120 Q60 80 20 60 Q50 90 80 110" fill="#4A7C2F" opacity="0.9"/>
@@ -751,6 +760,7 @@
 
     <!-- ── MISSION / VISION / VALUES ── -->
     <section class="mvv-section" id="mvv">
+        <!-- Palm trees in MVV section -->
         <svg class="palm-left" width="160" height="300" viewBox="0 0 180 340" xmlns="http://www.w3.org/2000/svg" style="opacity:0.12;">
             <rect x="82" y="120" width="16" height="220" rx="8" fill="#8B5E3C"/>
             <path d="M90 120 Q60 80 20 60 Q50 90 80 110" fill="#3A5C2A" opacity="0.9"/>
@@ -850,14 +860,38 @@
         </div>
     </section>
 
-    <!-- ── FOOTER (no palm trees) ── -->
+    <!-- ── FOOTER ── -->
     <footer>
-        <div class="footer-tagline">"From Harvest to Art"</div>
-        <div class="social-links">
-            <a href="https://facebook.com/LikhaAni" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/likha.ani" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <!-- Palm trees in footer -->
+        <svg class="footer-palm-left" width="140" height="260" viewBox="0 0 180 340" xmlns="http://www.w3.org/2000/svg">
+            <rect x="82" y="120" width="16" height="220" rx="8" fill="#C8A96E"/>
+            <path d="M90 120 Q60 80 20 60 Q50 90 80 110" fill="#7AB55C" opacity="0.9"/>
+            <path d="M90 110 Q50 60 10 30 Q45 70 85 100" fill="#8FC96A"/>
+            <path d="M90 115 Q130 70 170 50 Q140 85 95 108" fill="#7AB55C" opacity="0.9"/>
+            <path d="M90 105 Q140 55 175 25 Q145 65 92 98" fill="#8FC96A"/>
+            <path d="M90 118 Q70 60 55 10 Q75 65 88 112" fill="#7AB55C"/>
+            <path d="M90 112 Q110 55 125 5 Q105 60 92 106" fill="#8FC96A"/>
+            <circle cx="90" cy="125" r="6" fill="#A07840"/>
+        </svg>
+        <svg class="footer-palm-right" width="140" height="260" viewBox="0 0 180 340" xmlns="http://www.w3.org/2000/svg">
+            <rect x="82" y="120" width="16" height="220" rx="8" fill="#C8A96E"/>
+            <path d="M90 120 Q60 80 20 60 Q50 90 80 110" fill="#7AB55C" opacity="0.9"/>
+            <path d="M90 110 Q50 60 10 30 Q45 70 85 100" fill="#8FC96A"/>
+            <path d="M90 115 Q130 70 170 50 Q140 85 95 108" fill="#7AB55C" opacity="0.9"/>
+            <path d="M90 105 Q140 55 175 25 Q145 65 92 98" fill="#8FC96A"/>
+            <path d="M90 118 Q70 60 55 10 Q75 65 88 112" fill="#7AB55C"/>
+            <path d="M90 112 Q110 55 125 5 Q105 60 92 106" fill="#8FC96A"/>
+            <circle cx="90" cy="125" r="6" fill="#A07840"/>
+        </svg>
+
+        <div style="position:relative; z-index:2;">
+            <div class="footer-tagline">"From Harvest to Art"</div>
+            <div class="social-links">
+                <a href="https://facebook.com/LikhaAni" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/likha.ani" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-copy">&copy; 2026 Likha-Ani &nbsp;|&nbsp; Made with 🌾 in the Philippines</div>
         </div>
-        <div class="footer-copy">&copy; 2026 Likha-Ani &nbsp;|&nbsp; Made with 🌾 in the Philippines</div>
     </footer>
 
 </body>
