@@ -102,6 +102,7 @@
             align-items: center;
             justify-content: center;
             gap: 24px;
+            flex-wrap: wrap;
             box-shadow: 0 4px 24px rgba(139,94,60,0.12);
             overflow: hidden;
         }
@@ -549,27 +550,37 @@
         @media (max-width: 768px) {
             .announcement-bar { font-size: 0.75rem; padding: 8px 10px; }
 
-            header { padding: 24px 16px 20px; gap: 10px; }
-            header h1 { font-size: 3.8rem; }
-            header img.logo { height: 100px; }
+            /* Header: stack logo on top, title below, both centered */
+            header {
+                flex-direction: column;
+                padding: 24px 16px 20px;
+                gap: 8px;
+            }
+            header img.logo {
+                height: 90px;
+                order: -1;
+            }
+            header h1 { font-size: 3.5rem; }
 
             nav { padding: 10px 6px; }
             nav a { font-size: 0.75rem; padding: 5px 10px; margin: 2px; }
 
             .hero {
                 height: auto;
-                min-height: 220px;
-                padding: 40px 20px;
+                min-height: 200px;
+                padding: 50px 16px;
             }
             .hero h2 {
-                font-size: 1.1rem;
-                white-space: normal;
+                font-size: 1rem;
+                white-space: normal !important;
                 width: auto !important;
-                animation: none;
+                max-width: 92vw;
+                animation: none !important;
+                border-left: 4px solid var(--gold);
                 border-right: 4px solid var(--gold);
-                padding: 14px 18px;
-                max-width: 100%;
-                line-height: 1.5;
+                padding: 14px 16px;
+                line-height: 1.6;
+                text-align: center;
             }
 
             .why-section { padding: 60px 16px; }
@@ -641,8 +652,8 @@
 
     <!-- ── HEADER ── -->
     <header>
-        <h1>Likha-Ani</h1>
         <img src="images/logo.png" alt="Likha-Ani Logo" class="logo">
+        <h1>Likha-Ani</h1>
     </header>
 
     <nav>
