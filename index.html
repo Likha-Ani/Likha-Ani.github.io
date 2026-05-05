@@ -98,11 +98,10 @@
             padding: 36px 40px 28px;
             text-align: center;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
+            gap: 16px;
             box-shadow: 0 4px 24px rgba(139,94,60,0.12);
             overflow: hidden;
         }
@@ -189,6 +188,20 @@
             max-width: 90vw;
             text-shadow: 1px 2px 8px rgba(0,0,0,0.4);
             animation: typewriter 3.5s steps(50) 0.5s forwards, blink 0.75s step-end infinite;
+        }
+        /* Disable typewriter on touch/mobile screens */
+        @media (hover: none), (max-width: 768px) {
+            .hero h2 {
+                white-space: normal !important;
+                width: auto !important;
+                overflow: visible !important;
+                animation: none !important;
+                font-size: 1.05rem;
+                padding: 14px 18px;
+                line-height: 1.65;
+                max-width: 88vw;
+                text-align: center;
+            }
         }
         @keyframes typewriter { from { width: 0; } to { width: 100%; } }
         @keyframes blink { 50% { border-right-color: transparent; } }
@@ -550,17 +563,12 @@
         @media (max-width: 768px) {
             .announcement-bar { font-size: 0.75rem; padding: 8px 10px; }
 
-            /* Header: stack logo on top, title below, both centered */
             header {
-                flex-direction: column;
-                padding: 24px 16px 20px;
+                padding: 20px 16px 16px;
                 gap: 8px;
             }
-            header img.logo {
-                height: 90px;
-                order: -1;
-            }
-            header h1 { font-size: 3.5rem; }
+            header img.logo { height: 86px; }
+            header h1 { font-size: 3.4rem; }
 
             nav { padding: 10px 6px; }
             nav a { font-size: 0.75rem; padding: 5px 10px; margin: 2px; }
@@ -569,18 +577,6 @@
                 height: auto;
                 min-height: 200px;
                 padding: 50px 16px;
-            }
-            .hero h2 {
-                font-size: 1rem;
-                white-space: normal !important;
-                width: auto !important;
-                max-width: 92vw;
-                animation: none !important;
-                border-left: 4px solid var(--gold);
-                border-right: 4px solid var(--gold);
-                padding: 14px 16px;
-                line-height: 1.6;
-                text-align: center;
             }
 
             .why-section { padding: 60px 16px; }
