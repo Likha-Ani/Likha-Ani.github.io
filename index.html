@@ -4,26 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Likha-Ani | Eco-Friendly Art</title>
-    <!-- Poppins (body) + Agrandir closest Google Fonts alternative: Syne for display, Poppins for body -->
-    <!-- Agrandir is a paid font; closest free Google Fonts match is Syne (bold, geometric) -->
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
-            /* ── PITCH DECK PALETTE ── */
-            --ivory:         #FFF8E8;   /* page background */
-            --ivory-dark:    #F5EDD5;   /* slightly deeper cream */
-            --sage-light:    #E8EDD8;   /* decorative leaf shapes */
-            --sage-mid:      #D0DAB8;   /* borders & dividers */
-            --olive-dark:    #434A23;   /* card backgrounds, headers */
-            --olive-mid:     #4F5D29;   /* hover / mid-tone green */
-            --olive-text:    #3F5A1B;   /* body & heading text */
-            --olive-light:   #5C7A2A;   /* accent / link */
-            --dot-gray:      #BFCBA0;   /* decorative dots */
-            --white-text:    #FFF8E8;   /* text on dark cards */
-            --text-dark:     #2C3A10;   /* deepest text */
-            --tan:           #C8B98A;   /* warm accent */
-            --tan-light:     #E0D2A8;   /* light warm border */
+            --ivory:         #FFF8E8;
+            --ivory-dark:    #F5EDD5;
+            --sage-light:    #E8EDD8;
+            --sage-mid:      #D0DAB8;
+            --olive-dark:    #434A23;
+            --olive-mid:     #4F5D29;
+            --olive-text:    #3F5A1B;
+            --olive-light:   #5C7A2A;
+            --dot-gray:      #BFCBA0;
+            --white-text:    #FFF8E8;
+            --text-dark:     #2C3A10;
+            --tan:           #C8B98A;
+            --tan-light:     #E0D2A8;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,7 +32,6 @@
             overflow-x: hidden;
         }
 
-        /* ── ANNOUNCEMENT BANNER ── */
         .announcement-bar {
             background: var(--olive-dark);
             color: var(--white-text);
@@ -49,7 +45,6 @@
         }
         .announcement-bar .highlight { color: var(--tan-light); }
 
-        /* ── RICE HUSK ANIMATION ── */
         .rice-container {
             position: fixed; top: 0; left: 0;
             width: 100%; height: 100%;
@@ -96,10 +91,8 @@
             gap: 16px;
             box-shadow: 0 4px 24px rgba(67,74,35,0.10);
             overflow: hidden;
-            /* decorative dot grid — matches pitch deck motif */
             position: relative;
         }
-        /* dot grid decoration top-left & bottom-right like the pitch deck */
         header::before, header::after {
             content: '';
             position: absolute;
@@ -110,7 +103,6 @@
         }
         header::before { top: 18px; left: 24px; }
         header::after  { bottom: 18px; right: 24px; }
-
         header h1 {
             font-family: 'Dancing Script', cursive;
             font-size: 10rem;
@@ -119,14 +111,12 @@
             animation: fadeDown 0.8s ease both;
         }
         header img.logo {
-            height: 150px;
-            width: auto;
+            height: 150px; width: auto;
             border-radius: 50%;
             border: 4px solid var(--sage-mid);
             box-shadow: 0 8px 32px rgba(67,74,35,0.15);
             animation: fadeUp 0.8s ease 0.2s both;
-            background: white;
-            flex-shrink: 0;
+            background: white; flex-shrink: 0;
         }
         @keyframes fadeDown { from { opacity:0; transform: translateY(-20px); } to { opacity:1; transform: translateY(0); } }
         @keyframes fadeUp   { from { opacity:0; transform: translateY(20px);  } to { opacity:1; transform: translateY(0); } }
@@ -134,133 +124,82 @@
         /* ── NAV ── */
         nav {
             background-color: var(--olive-dark);
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 14px 12px;
-            gap: 4px;
+            display: flex; justify-content: center; flex-wrap: wrap;
+            padding: 14px 12px; gap: 4px;
             box-shadow: 0 3px 12px rgba(0,0,0,0.15);
         }
         nav a {
-            color: var(--white-text);
-            text-decoration: none;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 7px 18px;
-            border-radius: 30px;
+            color: var(--white-text); text-decoration: none;
+            font-family: 'Poppins', sans-serif; font-weight: 600;
+            font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 7px 18px; border-radius: 30px;
             transition: background 0.2s, color 0.2s, transform 0.1s;
         }
-        nav a:hover {
-            background-color: var(--sage-light);
-            color: var(--olive-dark);
-            transform: translateY(-1px);
-        }
+        nav a:hover { background-color: var(--sage-light); color: var(--olive-dark); transform: translateY(-1px); }
 
         /* ── HERO ── */
         .hero {
             background-image: url("images/group_photo.png");
-            background-size: cover;
-            background-position: center 39%;
-            height: 420px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            padding: 20px;
+            background-size: cover; background-position: center 39%;
+            height: 420px; display: flex; align-items: center;
+            justify-content: center; text-align: center;
+            position: relative; padding: 20px;
         }
         .hero::after {
-            content: '';
-            position: absolute; inset: 0;
+            content: ''; position: absolute; inset: 0;
             background: linear-gradient(160deg, rgba(67,74,35,0.6), rgba(63,90,27,0.45));
         }
         .hero h2 {
-            font-family: 'Syne', sans-serif;
-            font-weight: 800;
-            font-size: 2.2rem;
-            color: var(--white-text);
-            background-color: rgba(67,74,35,0.85);
-            padding: 16px 32px;
-            border-radius: 12px;
-            border-left: 4px solid var(--tan-light);
-            border-right: 4px solid var(--tan-light);
-            position: relative; z-index: 1;
-            overflow: hidden;
-            white-space: nowrap;
-            width: 0;
-            max-width: 90vw;
+            font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.2rem;
+            color: var(--white-text); background-color: rgba(67,74,35,0.85);
+            padding: 16px 32px; border-radius: 12px;
+            border-left: 4px solid var(--tan-light); border-right: 4px solid var(--tan-light);
+            position: relative; z-index: 1; overflow: hidden;
+            white-space: nowrap; width: 0; max-width: 90vw;
             animation: typewriter 3.5s steps(50) 0.5s forwards, blink 0.75s step-end infinite;
         }
         @media (hover: none), (max-width: 768px) {
             .hero h2 {
-                white-space: normal !important;
-                width: auto !important;
-                overflow: visible !important;
-                animation: none !important;
-                font-size: 1.05rem;
-                padding: 14px 18px;
-                line-height: 1.65;
-                max-width: 88vw;
-                text-align: center;
+                white-space: normal !important; width: auto !important;
+                overflow: visible !important; animation: none !important;
+                font-size: 1.05rem; padding: 14px 18px;
+                line-height: 1.65; max-width: 88vw; text-align: center;
             }
         }
         @keyframes typewriter { from { width: 0; } to { width: 100%; } }
         @keyframes blink { 50% { border-right-color: transparent; } }
 
-        /* ── SECTION TITLES ── */
+        /* ── SECTION LABELS & TITLES ── */
         .section-label {
-            display: inline-block;
-            background: var(--sage-light);
-            color: var(--olive-dark);
-            font-size: 0.72rem;
-            font-weight: 700;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            padding: 4px 14px;
-            border-radius: 30px;
-            margin-bottom: 10px;
-            border: 1px solid var(--sage-mid);
+            display: inline-block; background: var(--sage-light);
+            color: var(--olive-dark); font-size: 0.72rem; font-weight: 700;
+            font-family: 'Poppins', sans-serif; letter-spacing: 0.18em;
+            text-transform: uppercase; padding: 4px 14px; border-radius: 30px;
+            margin-bottom: 10px; border: 1px solid var(--sage-mid);
         }
         .section-title {
-            font-family: 'Syne', sans-serif;
-            font-weight: 800;
-            font-size: 2.3rem;
-            line-height: 1.2;
-            margin-bottom: 8px;
-            color: var(--olive-dark);
+            font-family: 'Syne', sans-serif; font-weight: 800;
+            font-size: 2.3rem; line-height: 1.2; margin-bottom: 8px; color: var(--olive-dark);
         }
         .section-divider {
             width: 60px; height: 3px;
             background: linear-gradient(90deg, var(--olive-dark), var(--sage-mid));
-            border-radius: 2px;
-            margin: 0 auto 40px;
+            border-radius: 2px; margin: 0 auto 40px;
         }
 
         /* ── WHY CHOOSE US ── */
         .why-section {
-            background: var(--olive-dark);
-            padding: 80px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            background: var(--olive-dark); padding: 80px 20px;
+            text-align: center; position: relative; overflow: hidden;
         }
-        /* dot grid decoration — pitch deck signature */
         .why-section::before {
-            content: '';
-            position: absolute;
-            top: 24px; right: 32px;
+            content: ''; position: absolute; top: 24px; right: 32px;
             width: 120px; height: 90px;
             background-image: radial-gradient(circle, rgba(255,248,232,0.25) 2px, transparent 2px);
             background-size: 20px 20px;
         }
         .why-section::after {
-            content: '';
-            position: absolute;
-            bottom: 24px; left: 32px;
+            content: ''; position: absolute; bottom: 24px; left: 32px;
             width: 120px; height: 90px;
             background-image: radial-gradient(circle, rgba(255,248,232,0.25) 2px, transparent 2px);
             background-size: 20px 20px;
@@ -268,41 +207,24 @@
         .why-section .section-title { color: var(--white-text); }
         .why-section .section-label { background: rgba(255,248,232,0.12); color: var(--tan-light); border-color: rgba(255,248,232,0.2); }
         .why-section .section-divider { background: linear-gradient(90deg, var(--tan-light), var(--sage-light)); }
-
         .why-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            max-width: 960px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 24px; max-width: 960px; margin: 0 auto;
         }
         .why-grid-bottom {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 640px;
-            margin: 24px auto 0;
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 24px; max-width: 640px; margin: 24px auto 0;
         }
         .why-card {
-            background: rgba(255,248,232,0.06);
-            border: 1px solid rgba(255,248,232,0.15);
-            border-radius: 16px;
-            padding: 32px 24px;
-            text-align: center;
+            background: rgba(255,248,232,0.06); border: 1px solid rgba(255,248,232,0.15);
+            border-radius: 16px; padding: 32px 24px; text-align: center;
             transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
         }
-        .why-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255,248,232,0.12);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.25);
-        }
+        .why-card:hover { transform: translateY(-8px); background: rgba(255,248,232,0.12); box-shadow: 0 16px 40px rgba(0,0,0,0.25); }
         .why-card .icon-wrap {
             width: 64px; height: 64px;
-            background: rgba(232,237,216,0.12);
-            border: 2px solid rgba(232,237,216,0.3);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 18px;
+            background: rgba(232,237,216,0.12); border: 2px solid rgba(232,237,216,0.3);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;
         }
         .why-card i { font-size: 1.8rem; color: var(--tan-light); }
         .why-card h4 { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--white-text); font-size: 1rem; margin-bottom: 10px; }
@@ -313,185 +235,135 @@
 
         /* ── PROBLEM SECTION ── */
         .problem-section {
-            display: grid;
-            grid-template-columns: 1fr 1.6fr;
-            gap: 40px;
-            align-items: start;
-            background: var(--ivory-dark);
-            border-radius: 20px;
-            padding: 40px;
-            border: 1px solid var(--sage-mid);
+            display: grid; grid-template-columns: 1fr 1.6fr;
+            gap: 40px; align-items: start;
+            background: var(--ivory-dark); border-radius: 20px;
+            padding: 40px; border: 1px solid var(--sage-mid);
             box-shadow: 0 8px 40px rgba(67,74,35,0.10);
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
         .problem-section::before {
-            content: '';
-            position: absolute; top: 0; left: 0;
+            content: ''; position: absolute; top: 0; left: 0;
             width: 6px; height: 100%;
             background: linear-gradient(180deg, var(--olive-dark), var(--sage-mid));
             border-radius: 20px 0 0 20px;
         }
         .problem-section img {
-            width: 100%;
-            border-radius: 12px;
+            width: 100%; border-radius: 12px;
             border: 3px solid var(--olive-dark);
             box-shadow: 6px 6px 20px rgba(67,74,35,0.18);
-            object-fit: cover;
-            object-position: center top;
-            aspect-ratio: 4/3;
+            object-fit: cover; object-position: center top; aspect-ratio: 4/3;
         }
         .problem-section .text p {
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.8;
-            margin-bottom: 14px;
-            color: var(--olive-text);
+            font-size: 1rem; font-weight: 400;
+            line-height: 1.8; margin-bottom: 14px; color: var(--olive-text);
         }
 
-        /* ── PRODUCTS ── */
-        .product-section {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
+        /* ── PRODUCT — single featured card ── */
+        .product-featured {
             margin-top: 40px;
-        }
-        .product-card {
-            background: var(--ivory);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            background: var(--ivory-dark);
+            border-radius: 20px;
             border: 1.5px solid var(--sage-mid);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(67,74,35,0.08);
-            transition: transform 0.25s, box-shadow 0.25s;
-            display: flex;
-            flex-direction: column;
-        }
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 48px rgba(67,74,35,0.18);
-        }
-        .product-card .img-wrap {
-            position: relative;
+            box-shadow: 0 6px 30px rgba(67,74,35,0.10);
             overflow: hidden;
         }
-        .product-card img {
-            width: 100%; height: 200px;
-            object-fit: cover;
-            transition: transform 0.4s;
-            display: block;
+        .product-featured .img-side {
+            position: relative; overflow: hidden;
+            min-height: 380px;
         }
-        .product-card:hover img { transform: scale(1.06); }
-        .product-card .card-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
-        .product-card h4 { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--olive-dark); font-size: 1.1rem; margin-bottom: 10px; }
-        .product-card p { color: var(--olive-text); font-size: 0.88rem; line-height: 1.65; flex: 1; margin-bottom: 16px; }
-        .product-card-footer { display: flex; align-items: center; justify-content: space-between; padding: 0 22px 22px; }
+        .product-featured .img-side img {
+            width: 100%; height: 100%;
+            object-fit: cover; display: block;
+            transition: transform 0.5s;
+        }
+        .product-featured:hover .img-side img { transform: scale(1.04); }
+        .product-featured .img-side .badge {
+            position: absolute; top: 18px; left: 18px;
+            background: var(--olive-dark); color: var(--white-text);
+            font-family: 'Poppins', sans-serif; font-size: 0.72rem;
+            font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+            padding: 5px 14px; border-radius: 30px;
+        }
+        .product-featured .info-side { padding: 40px 40px 40px 0; }
+        .product-featured .info-side h4 {
+            font-family: 'Syne', sans-serif; font-weight: 800;
+            font-size: 1.6rem; color: var(--olive-dark); margin-bottom: 6px;
+        }
+        .product-featured .info-side .subtitle {
+            font-size: 0.85rem; color: var(--tan); font-style: italic;
+            margin-bottom: 20px; font-weight: 600;
+        }
+        .product-featured .info-side p {
+            color: var(--olive-text); font-size: 0.93rem;
+            line-height: 1.75; margin-bottom: 20px;
+        }
+        .feature-list { list-style: none; margin-bottom: 24px; }
+        .feature-list li {
+            display: flex; align-items: flex-start; gap: 10px;
+            color: var(--olive-text); font-size: 0.88rem;
+            line-height: 1.6; margin-bottom: 8px;
+        }
+        .feature-list li i { color: var(--olive-dark); margin-top: 3px; flex-shrink: 0; }
+        .sizes-row {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;
+        }
+        .size-chip {
+            background: var(--sage-light); color: var(--olive-dark);
+            font-family: 'Poppins', sans-serif; font-size: 0.8rem; font-weight: 700;
+            padding: 4px 14px; border-radius: 30px;
+            border: 1px solid var(--sage-mid);
+        }
+        .applications-label {
+            font-family: 'Syne', sans-serif; font-weight: 700;
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em;
+            color: var(--olive-dark); margin-bottom: 10px;
+        }
+        .app-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+        .app-tag {
+            background: var(--olive-dark); color: var(--white-text);
+            font-size: 0.78rem; font-weight: 600;
+            padding: 4px 13px; border-radius: 30px;
+        }
+        .product-footer {
+            display: flex; align-items: center; gap: 20px;
+        }
         .product-price {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--olive-dark);
+            font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--olive-dark);
         }
         .cart-button {
-            background: var(--olive-dark);
-            color: var(--white-text);
-            border: none;
-            padding: 9px 20px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            border-radius: 30px;
-            letter-spacing: 0.05em;
+            background: var(--olive-dark); color: var(--white-text);
+            border: none; padding: 12px 28px; cursor: pointer;
+            font-size: 0.88rem; font-family: 'Poppins', sans-serif; font-weight: 600;
+            border-radius: 30px; letter-spacing: 0.05em;
             transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
             box-shadow: 0 4px 12px rgba(67,74,35,0.25);
         }
-        .cart-button:hover {
-            background: var(--olive-mid);
-            transform: scale(1.05);
-            box-shadow: 0 6px 18px rgba(67,74,35,0.35);
-        }
+        .cart-button:hover { background: var(--olive-mid); transform: scale(1.05); box-shadow: 0 6px 18px rgba(67,74,35,0.35); }
 
-        /* ── MVV ── */
-        .mvv-section {
-            background: var(--ivory-dark);
-            padding: 80px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        /* dot grid corners */
-        .mvv-section::before {
-            content: '';
-            position: absolute;
-            top: 24px; left: 32px;
-            width: 100px; height: 80px;
-            background-image: radial-gradient(circle, var(--dot-gray) 2px, transparent 2px);
-            background-size: 18px 18px;
-            opacity: 0.6;
-        }
-        .mvv-section::after {
-            content: '';
-            position: absolute;
-            bottom: 24px; right: 32px;
-            width: 100px; height: 80px;
-            background-image: radial-gradient(circle, var(--dot-gray) 2px, transparent 2px);
-            background-size: 18px 18px;
-            opacity: 0.6;
-        }
-        .mvv-section .section-title { text-align: center; color: var(--olive-dark); }
-        .mvv-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            max-width: 1040px;
-            margin: 0 auto;
-        }
-        .mvv-card {
-            background: var(--olive-dark);
-            color: var(--white-text);
-            border-radius: 16px;
-            padding: 36px 28px;
-            box-shadow: 0 6px 30px rgba(67,74,35,0.18);
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
-        .mvv-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(67,74,35,0.28); }
-        .mvv-card h4 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--white-text); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
-        .mvv-card h4 i { color: var(--tan-light); font-size: 1.1rem; }
-        .mvv-card p, .mvv-card ul { color: var(--sage-light); font-size: 0.93rem; line-height: 1.8; }
-        .mvv-card ul { list-style: none; text-align: left; }
-        .mvv-card ul li { margin-bottom: 5px; padding-left: 4px; }
-        .mvv-card ul li strong { color: var(--white-text); font-size: 1rem; }
-
-        /* ── TESTIMONIALS ── */
+        /* ── VALIDATORS / TESTIMONIALS ── */
         .testimonials-section {
-            background: var(--ivory);
-            padding: 80px 20px;
-            text-align: center;
+            background: var(--ivory); padding: 80px 20px; text-align: center;
         }
         .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            max-width: 1040px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 24px; max-width: 1040px; margin: 0 auto;
         }
         .testimonial-card {
-            background: var(--ivory-dark);
-            border-radius: 16px;
-            padding: 30px 26px;
-            text-align: left;
+            background: var(--ivory-dark); border-radius: 16px;
+            padding: 30px 26px; text-align: left;
             box-shadow: 0 4px 20px rgba(67,74,35,0.08);
             border-bottom: 3px solid var(--olive-dark);
-            transition: transform 0.25s, box-shadow 0.25s;
-            position: relative;
+            transition: transform 0.25s, box-shadow 0.25s; position: relative;
         }
         .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 12px; right: 20px;
-            font-family: 'Dancing Script', cursive;
-            font-size: 5rem;
-            color: var(--sage-mid);
-            line-height: 1;
+            content: '"'; position: absolute; top: 12px; right: 20px;
+            font-family: 'Dancing Script', cursive; font-size: 5rem;
+            color: var(--sage-mid); line-height: 1;
         }
         .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(67,74,35,0.14); }
         .testimonial-card .stars { color: var(--olive-mid); font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
@@ -499,30 +371,83 @@
         .testimonial-card .reviewer { font-weight: 700; color: var(--olive-dark); font-size: 0.88rem; }
         .testimonial-card .reviewer span { color: var(--olive-text); font-weight: 400; }
 
+        /* ── MVV ── */
+        .mvv-section {
+            background: var(--ivory-dark); padding: 80px 20px;
+            position: relative; overflow: hidden;
+        }
+        .mvv-section::before {
+            content: ''; position: absolute; top: 24px; left: 32px;
+            width: 100px; height: 80px;
+            background-image: radial-gradient(circle, var(--dot-gray) 2px, transparent 2px);
+            background-size: 18px 18px; opacity: 0.6;
+        }
+        .mvv-section::after {
+            content: ''; position: absolute; bottom: 24px; right: 32px;
+            width: 100px; height: 80px;
+            background-image: radial-gradient(circle, var(--dot-gray) 2px, transparent 2px);
+            background-size: 18px 18px; opacity: 0.6;
+        }
+        .mvv-section .section-title { text-align: center; color: var(--olive-dark); }
+        .mvv-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 28px; max-width: 1040px; margin: 0 auto;
+        }
+        .mvv-card {
+            background: var(--olive-dark); color: var(--white-text);
+            border-radius: 16px; padding: 36px 28px;
+            box-shadow: 0 6px 30px rgba(67,74,35,0.18);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .mvv-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(67,74,35,0.28); }
+        .mvv-card h4 {
+            font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem;
+            color: var(--white-text); margin-bottom: 16px;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .mvv-card h4 i { color: var(--tan-light); font-size: 1.1rem; }
+        .mvv-card p, .mvv-card ul { color: var(--sage-light); font-size: 0.93rem; line-height: 1.8; }
+        .mvv-card ul { list-style: none; text-align: left; }
+        .mvv-card ul li { margin-bottom: 5px; padding-left: 4px; }
+        .mvv-card ul li strong { color: var(--white-text); font-size: 1rem; }
+
+        /* ── TEAM ── */
+        .team-section { background: var(--ivory); padding: 80px 20px; text-align: center; }
+        .team-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 24px; max-width: 1040px; margin: 0 auto;
+        }
+        .team-card {
+            background: var(--ivory-dark); border-radius: 16px;
+            padding: 28px 20px; border: 1px solid var(--sage-mid);
+            box-shadow: 0 4px 20px rgba(67,74,35,0.07);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .team-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(67,74,35,0.14); }
+        .team-avatar {
+            width: 72px; height: 72px; border-radius: 50%;
+            background: var(--olive-dark); display: flex; align-items: center;
+            justify-content: center; margin: 0 auto 14px;
+            border: 3px solid var(--sage-mid);
+        }
+        .team-avatar i { font-size: 1.6rem; color: var(--white-text); }
+        .team-card h4 { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--olive-dark); font-size: 0.95rem; margin-bottom: 6px; }
+        .team-card .role { font-size: 0.8rem; color: var(--tan); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+
         /* ── CONTACT ── */
         #contact .section-title { color: var(--olive-dark); }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-top: 20px;
-        }
+        .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; }
         .contact-item {
             display: flex; align-items: center; gap: 16px;
-            background: var(--ivory-dark);
-            border: 1px solid var(--sage-mid);
-            border-radius: 16px;
-            padding: 18px 22px;
+            background: var(--ivory-dark); border: 1px solid var(--sage-mid);
+            border-radius: 16px; padding: 18px 22px;
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 2px 12px rgba(67,74,35,0.06);
         }
         .contact-item:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(67,74,35,0.12); }
         .contact-item .icon-box {
-            width: 46px; height: 46px;
-            background: var(--olive-dark);
-            border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
+            width: 46px; height: 46px; background: var(--olive-dark);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
         .contact-item .icon-box i { font-size: 1.1rem; color: var(--white-text); }
         .contact-item div { font-size: 0.93rem; color: var(--olive-text); }
@@ -532,46 +457,29 @@
 
         /* ── FOOTER ── */
         footer {
-            background: var(--olive-dark);
-            color: var(--sage-light);
-            text-align: center;
-            padding: 50px 20px 30px;
-            font-size: 0.9rem;
-            position: relative;
-            overflow: hidden;
+            background: var(--olive-dark); color: var(--sage-light);
+            text-align: center; padding: 50px 20px 30px;
+            font-size: 0.9rem; position: relative; overflow: hidden;
         }
         footer::before {
-            content: '';
-            position: absolute;
-            top: 20px; right: 30px;
+            content: ''; position: absolute; top: 20px; right: 30px;
             width: 100px; height: 80px;
             background-image: radial-gradient(circle, rgba(255,248,232,0.2) 2px, transparent 2px);
             background-size: 18px 18px;
         }
         footer::after {
-            content: '';
-            position: absolute;
-            bottom: 20px; left: 30px;
+            content: ''; position: absolute; bottom: 20px; left: 30px;
             width: 100px; height: 80px;
             background-image: radial-gradient(circle, rgba(255,248,232,0.2) 2px, transparent 2px);
             background-size: 18px 18px;
         }
-        .footer-tagline {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.8rem;
-            color: var(--tan-light);
-            margin-bottom: 16px;
-        }
+        .footer-tagline { font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: var(--tan-light); margin-bottom: 16px; }
         .social-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 20px; }
         .social-links a {
-            color: var(--white-text);
-            background: rgba(255,248,232,0.10);
-            border: 1px solid rgba(255,248,232,0.18);
-            border-radius: 50%;
-            width: 46px; height: 46px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.1rem; text-decoration: none;
-            transition: background 0.2s, transform 0.2s;
+            color: var(--white-text); background: rgba(255,248,232,0.10);
+            border: 1px solid rgba(255,248,232,0.18); border-radius: 50%;
+            width: 46px; height: 46px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; text-decoration: none; transition: background 0.2s, transform 0.2s;
         }
         .social-links a:hover { background: var(--tan-light); color: var(--olive-dark); transform: scale(1.15); }
         footer a { color: var(--tan-light); text-decoration: none; font-weight: 700; }
@@ -581,8 +489,10 @@
         @media (max-width: 1024px) {
             header h1 { font-size: 7rem; }
             header img.logo { height: 130px; }
-            .product-section { grid-template-columns: repeat(2, 1fr); }
-            .product-section .product-card:nth-child(3) { grid-column: 1 / 3; max-width: 380px; margin: 0 auto; }
+            .product-featured { grid-template-columns: 1fr; }
+            .product-featured .img-side { min-height: 280px; }
+            .product-featured .info-side { padding: 32px; }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
             .announcement-bar { font-size: 0.75rem; padding: 8px 10px; }
@@ -598,12 +508,15 @@
             .content { padding: 50px 16px; }
             .problem-section { grid-template-columns: 1fr; padding: 24px; gap: 20px; }
             .problem-section img { aspect-ratio: 16/9; }
-            .product-section { grid-template-columns: 1fr; }
-            .product-section .product-card:nth-child(3) { grid-column: auto; max-width: 100%; }
+            .product-featured { grid-template-columns: 1fr; }
+            .product-featured .img-side { min-height: 240px; }
+            .product-featured .info-side { padding: 24px; }
             .mvv-section { padding: 60px 16px; }
             .mvv-grid { grid-template-columns: 1fr; }
             .testimonials-section { padding: 60px 16px; }
             .testimonials-grid { grid-template-columns: 1fr; }
+            .team-section { padding: 60px 16px; }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-grid { grid-template-columns: 1fr; }
             .section-title { font-size: 1.8rem; }
             footer { padding: 40px 16px 24px; }
@@ -614,6 +527,7 @@
             header img.logo { height: 80px; }
             nav a { font-size: 0.68rem; padding: 4px 8px; }
             .why-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -624,7 +538,6 @@
         <span class="highlight">Shop now →</span> &nbsp;🌾
     </div>
 
-    <!-- Rice husks -->
     <div class="rice-container">
         <svg class="husk" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 12"><ellipse cx="15" cy="6" rx="13" ry="5" fill="#BFCBA0" opacity="0.7"/><ellipse cx="15" cy="6" rx="11" ry="3.5" fill="#D0DAB8" opacity="0.6"/></svg>
         <svg class="husk" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 12"><ellipse cx="15" cy="6" rx="13" ry="5" fill="#C8B98A" opacity="0.5"/><ellipse cx="15" cy="6" rx="11" ry="3.5" fill="#BFCBA0" opacity="0.5"/></svg>
@@ -651,9 +564,10 @@
 
     <nav>
         <a href="#about">About</a>
-        <a href="#products">Products</a>
+        <a href="#products">Product</a>
         <a href="#why">Why Us</a>
         <a href="#mvv">Mission</a>
+        <a href="#team">Team</a>
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -669,18 +583,18 @@
             <h3 class="section-title">Why Choose Likha-Ani?</h3>
             <div class="section-divider"></div>
             <div class="why-grid">
-                <div class="why-card"><div class="icon-wrap"><i class="fas fa-leaf"></i></div><h4>Natural &amp; Eco-Friendly</h4><p>Made from natural earth and plant-based ingredients — zero harmful chemicals.</p></div>
-                <div class="why-card"><div class="icon-wrap"><i class="fas fa-star"></i></div><h4>High-Quality Performance</h4><p>Tested by real students and creators for professional-grade results.</p></div>
-                <div class="why-card"><div class="icon-wrap"><i class="fas fa-shield-heart"></i></div><h4>Non-Toxic &amp; Safe</h4><p>Safe for all ages, from beginners to seasoned professionals.</p></div>
+                <div class="why-card"><div class="icon-wrap"><i class="fas fa-leaf"></i></div><h4>Eco-Friendly &amp; Sustainable</h4><p>Made from recycled rice straw fiber — reducing agricultural waste and protecting the environment.</p></div>
+                <div class="why-card"><div class="icon-wrap"><i class="fas fa-flask"></i></div><h4>TRL 5 Validated</h4><p>Technology Readiness Level 5: validated in a relevant environment and awarded Best in Research.</p></div>
+                <div class="why-card"><div class="icon-wrap"><i class="fas fa-shield-heart"></i></div><h4>Safe &amp; Non-Toxic</h4><p>Made from natural and renewable materials — safe to use for all ages and skill levels.</p></div>
             </div>
             <div class="why-grid-bottom">
-                <div class="why-card"><div class="icon-wrap"><i class="fas fa-flag"></i></div><h4>Proudly Philippine-Made</h4><p>Every purchase empowers local Filipino farming communities.</p></div>
-                <div class="why-card"><div class="icon-wrap"><i class="fas fa-paint-brush"></i></div><h4>Enhances Creativity</h4><p>Natural pigments and textures that inspire the creative process.</p></div>
+                <div class="why-card"><div class="icon-wrap"><i class="fas fa-flag"></i></div><h4>Supports Local Farmers</h4><p>Every purchase directly empowers farming communities in Iloilo by valuing their agricultural by-products.</p></div>
+                <div class="why-card"><div class="icon-wrap"><i class="fas fa-paint-brush"></i></div><h4>Wet &amp; Dry Media Ready</h4><p>Compatible with watercolor, acrylic, oil paint, charcoal, pencil, ink, and oil pastel.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- ── PROBLEM ── -->
+    <!-- ── ABOUT / PROBLEM ── -->
     <section class="content" id="about">
         <span class="section-label">The Problem</span>
         <h3 class="section-title">Why It Matters</h3>
@@ -688,52 +602,59 @@
         <div class="problem-section">
             <img src="images/problem.jpg" alt="Agricultural Waste Problem">
             <div class="text">
-                <p>Agricultural waste like rice husks and coconut fibers is often burned or discarded — causing pollution and wasting potential. At the same time, students and artists depend on expensive, non-biodegradable materials.</p>
-                <p>Farm by-products are undervalued, eco-friendly options are limited, and communities lose income opportunities. This affects farmers, artists, manufacturers, environmental groups, and consumers alike.</p>
-                <p>The issue stems from unsustainable art materials and low awareness and demand for recycling agricultural waste.</p>
-                <p>We're driven by our passion for art, sustainability, and community impact. By transforming agricultural waste into eco-friendly art materials, we reduce environmental harm while supporting farmers and empowering creators.</p>
+                <p>According to the Philippine Rice Research Institute (PhilRice), the Philippines produces 11–18 million tons of rice straw annually — much of which is underutilized or burned by farmers to clear fields, contributing to air pollution and wasted resources.</p>
+                <p>Many art materials today are expensive and not eco-friendly because they are made from wood, plastic, or chemically processed paper. Some artists, especially students, struggle to afford quality canvas paper and materials.</p>
+                <p>Farm by-products like rice straw are largely left in the fields or burned — seen as waste with little value. Meanwhile, eco-friendly art material options remain scarce and inaccessible.</p>
+                <p>Likha-Ani transforms agricultural waste into sustainable art materials, giving new life to farm by-products through creativity, innovation, and eco-friendly design — benefiting farmers, artists, and the planet alike.</p>
             </div>
         </div>
     </section>
 
-    <!-- ── PRODUCTS ── -->
+    <!-- ── PRODUCT ── -->
     <section class="content" id="products" style="background: var(--ivory-dark); max-width:100%; padding: 70px 40px;">
         <div style="max-width:1040px; margin:0 auto;">
-            <span class="section-label">Shop</span>
-            <h3 class="section-title">Our Products</h3>
+            <span class="section-label">Our Product</span>
+            <h3 class="section-title">Canvas Paper Pad</h3>
             <div class="section-divider" style="margin-left:0;"></div>
-            <div class="product-section">
-                <div class="product-card">
-                    <div class="img-wrap"><img src="images/canvases.jpg" alt="Canvas Paper Pad"></div>
-                    <div class="card-body">
-                        <h4>Canvas Paper Pad</h4>
-                        <p>Made from rice straw — acid-free, 280 GSM. Works for watercolor, ink, pencil, charcoal, pastels, acrylic, and oil. Available in A3, A4, A5, A6 (10 sheets each).</p>
-                    </div>
-                    <div class="product-card-footer">
-                        <span class="product-price">₱145</span>
-                        <button class="cart-button"><i class="fas fa-cart-plus" style="margin-right:6px;"></i>Add to Cart</button>
-                    </div>
+            <div class="product-featured">
+                <div class="img-side">
+                    <img src="images/canvases.jpg" alt="Likha-Ani Canvas Paper Pad">
+                    <span class="badge">🏆 Best in Research</span>
                 </div>
-                <div class="product-card">
-                    <div class="img-wrap"><img src="images/charcoal.jpg" alt="Drawing Charcoal Chalk"></div>
-                    <div class="card-body">
-                        <h4>Drawing Charcoal Chalk</h4>
-                        <p>Made from natural agricultural waste. 6-piece set (S, MS, M, MH, H, XH). Blendable and buildable — great for sketching, shading, and drawing on paper or canvas.</p>
+                <div class="info-side">
+                    <h4>Canvas Paper Made of Rice (<em>Oryza Sativa</em>) Straw</h4>
+                    <p class="subtitle">Art Inspired by Nature</p>
+                    <p>A high-quality canvas paper pad crafted from recycled rice straw fibers. Acid-free with a thick, durable textured surface — lightweight, biodegradable, and compatible with a wide range of wet and dry media.</p>
+
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Acid-free, thick textured surface</li>
+                        <li><i class="fas fa-check-circle"></i> Strong, durable, and lightweight</li>
+                        <li><i class="fas fa-check-circle"></i> Biodegradable — made from rice straw fiber</li>
+                        <li><i class="fas fa-check-circle"></i> Technology Readiness Level (TRL) 5 — validated in a relevant environment</li>
+                        <li><i class="fas fa-check-circle"></i> 10 sheets per pad</li>
+                    </ul>
+
+                    <p class="applications-label"><i class="fas fa-palette" style="margin-right:6px;"></i>Available Sizes</p>
+                    <div class="sizes-row">
+                        <span class="size-chip">A3 · 11.7 × 16.5 in</span>
+                        <span class="size-chip">A4 · 8.3 × 11.7 in</span>
+                        <span class="size-chip">A5 · 5.8 × 8.3 in</span>
+                        <span class="size-chip">A6 · 4.1 × 5.8 in</span>
                     </div>
-                    <div class="product-card-footer">
-                        <span class="product-price">₱160</span>
-                        <button class="cart-button"><i class="fas fa-cart-plus" style="margin-right:6px;"></i>Add to Cart</button>
+
+                    <p class="applications-label"><i class="fas fa-brush" style="margin-right:6px;"></i>Compatible Applications</p>
+                    <div class="app-tags">
+                        <span class="app-tag">Acrylic Paint</span>
+                        <span class="app-tag">Oil Paint</span>
+                        <span class="app-tag">Watercolor</span>
+                        <span class="app-tag">Pencil / Ballpen</span>
+                        <span class="app-tag">Charcoal Pencil</span>
+                        <span class="app-tag">Oil Pastel</span>
                     </div>
-                </div>
-                <div class="product-card">
-                    <div class="img-wrap"><img src="images/paint.jpg" alt="Natural Paint Set"></div>
-                    <div class="card-body">
-                        <h4>Natural Paint Set</h4>
-                        <p>Eco-friendly paints from natural earth, minerals, and plant extracts. 6 tubes × 12ml: Turmeric Yellow, Red Clay, Indigo Blue, Spinach Green, Charcoal Black, White Kaolin.</p>
-                    </div>
-                    <div class="product-card-footer">
-                        <span class="product-price">₱150</span>
-                        <button class="cart-button"><i class="fas fa-cart-plus" style="margin-right:6px;"></i>Add to Cart</button>
+
+                    <div class="product-footer">
+                        <span class="product-price">₱170</span>
+                        <button class="cart-button"><i class="fas fa-cart-plus" style="margin-right:8px;"></i>Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -772,26 +693,55 @@
         </div>
     </section>
 
-    <!-- ── TESTIMONIALS ── -->
+    <!-- ── TEAM ── -->
+    <section class="team-section" id="team">
+        <span class="section-label">The People</span>
+        <h3 class="section-title">Meet the Team</h3>
+        <div class="section-divider"></div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h4>Glydel Ud</h4>
+                <p class="role">CEO</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h4>Jullie May Dejuan</h4>
+                <p class="role">Marketing Team Leader</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h4>Eliser Bacyan</h4>
+                <p class="role">Finance</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h4>Johna Lobaton</h4>
+                <p class="role">Development Team Leader</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── VALIDATORS / REVIEWS ── -->
     <section class="testimonials-section" id="reviews">
-        <span class="section-label">Customer Stories</span>
-        <h3 class="section-title">What Our Customers Say</h3>
+        <span class="section-label">Validated by Users</span>
+        <h3 class="section-title">What Our Validators Say</h3>
         <div class="section-divider"></div>
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p>"I love how smooth the canvas feels! It's amazing knowing it's made from rice husks. Will definitely buy again!"</p>
-                <div class="reviewer">Maria S. <span>— Fine Arts Student, Iloilo</span></div>
+                <p>"Its surface enhances the quality of my painting."</p>
+                <div class="reviewer">Ar. Krishna Mogato <span>— Project Development Officer I, WVSU</span></div>
             </div>
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p>"Finally an eco-friendly option that doesn't compromise on quality. My paintings look great on Likha-Ani canvas!"</p>
-                <div class="reviewer">Juan R. <span>— Freelance Artist, Manila</span></div>
+                <p>"The product is good for painting and scrapbooking."</p>
+                <div class="reviewer">Belle Ann Cruz <span>— Draftsperson</span></div>
             </div>
             <div class="testimonial-card">
-                <div class="stars">★★★★☆</div>
-                <p>"Very affordable and sustainable! I recommended it to all my classmates. Love supporting local Filipino products."</p>
-                <div class="reviewer">Ana T. <span>— Design Student, Cebu</span></div>
+                <div class="stars">★★★★★</div>
+                <p>"It was fun doing artwork in the canvas paper."</p>
+                <div class="reviewer">Ar. Jan Dave Bustamante <span>— Architect / Validator</span></div>
             </div>
         </div>
     </section>
