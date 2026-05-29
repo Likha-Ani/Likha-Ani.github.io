@@ -156,29 +156,55 @@
             padding: 28px 24px;
             position: relative; z-index: 1;
         }
+        /* Two-line tagline: each line animates separately on desktop */
         .hero-tagline h2 {
-            font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.65rem;
+            font-family: 'Syne', sans-serif; font-weight: 800;
             color: var(--white-text);
             letter-spacing: 0.01em;
-            line-height: 1.35;
-            max-width: 780px;
+            line-height: 1.45;
+            max-width: 820px;
             margin: 0 auto;
+            font-size: 1.55rem;
+            white-space: normal;
+        }
+        .tagline-line {
+            display: block;
             overflow: hidden;
             white-space: nowrap;
             width: 0;
-            animation: typewriter 3.2s steps(55) 0.4s forwards, blink 0.75s step-end infinite;
             border-right: 3px solid var(--tan-light);
         }
-        @media (hover: none), (max-width: 768px) {
-            .hero-tagline h2 {
-                white-space: normal !important; width: auto !important;
-                overflow: visible !important; animation: none !important;
-                border-right: none;
-                font-size: 1.1rem; line-height: 1.55;
-            }
+        .tagline-line-1 {
+            animation: typewriter1 2s steps(32) 0.4s forwards, blink 0.75s step-end 0.4s 3;
         }
-        @keyframes typewriter { from { width: 0; } to { width: 100%; } }
+        .tagline-line-2 {
+            animation: typewriter2 2s steps(26) 2.5s forwards, blink 0.75s step-end infinite 2.5s;
+            border-right-color: transparent;
+        }
+        .tagline-line-2.typing {
+            border-right-color: var(--tan-light);
+        }
+        @keyframes typewriter1 { from { width: 0; } to { width: 100%; } }
+        @keyframes typewriter2 { from { width: 0; } to { width: 100%; } }
         @keyframes blink { 50% { border-right-color: transparent; } }
+
+        /* On mobile: drop the typewriter effect entirely */
+        @media (hover: none), (max-width: 768px) {
+            .tagline-line {
+                white-space: normal !important;
+                width: auto !important;
+                overflow: visible !important;
+                animation: none !important;
+                border-right: none !important;
+                display: inline !important;
+            }
+            .hero-tagline h2 {
+                font-size: 1.15rem;
+                line-height: 1.6;
+            }
+            /* Add a space between the two inline spans on mobile */
+            .tagline-line-1::after { content: ' '; }
+        }
 
         /* ── SECTION LABELS & TITLES ── */
         .section-label {
@@ -244,10 +270,8 @@
         /* ── CONTENT ── */
         .content { padding: 70px 20px; max-width: 1040px; margin: auto; }
 
-        /* ── PROBLEM SECTION ── */
+        /* ── PROBLEM SECTION — single column, image below text ── */
         .problem-section {
-            display: grid; grid-template-columns: 1fr 1.6fr;
-            gap: 40px; align-items: start;
             background: var(--ivory-dark); border-radius: 20px;
             padding: 40px; border: 1px solid var(--sage-mid);
             box-shadow: 0 8px 40px rgba(67,74,35,0.10);
@@ -259,57 +283,75 @@
             background: linear-gradient(180deg, var(--olive-dark), var(--sage-mid));
             border-radius: 20px 0 0 20px;
         }
+        .problem-section .text p {
+            font-size: 1rem; font-weight: 400;
+            line-height: 1.8; margin-bottom: 14px; color: var(--olive-text);
+        }
         .problem-section img {
             width: 100%; border-radius: 12px;
             border: 3px solid var(--olive-dark);
             box-shadow: 6px 6px 20px rgba(67,74,35,0.18);
-            object-fit: cover; object-position: center top; aspect-ratio: 4/3;
-        }
-        .problem-section .text p {
-            font-size: 1rem; font-weight: 400;
-            line-height: 1.8; margin-bottom: 14px; color: var(--olive-text);
+            object-fit: cover; object-position: center;
+            margin-top: 28px;
+            aspect-ratio: 16/7;
         }
 
         /* ── PRODUCT — single featured card ── */
         .product-featured {
             margin-top: 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
             background: var(--ivory-dark);
             border-radius: 20px;
             border: 1.5px solid var(--sage-mid);
             box-shadow: 0 6px 30px rgba(67,74,35,0.10);
             overflow: hidden;
         }
-        .product-featured .img-side {
-            position: relative; overflow: hidden;
-            min-height: 380px;
+
+        /* Top: product image + applications image side by side */
+        .product-images-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 340px;
         }
-        .product-featured .img-side img {
+        .product-images-row .img-side {
+            position: relative; overflow: hidden;
+        }
+        .product-images-row .img-side img {
             width: 100%; height: 100%;
             object-fit: cover; display: block;
             transition: transform 0.5s;
         }
         .product-featured:hover .img-side img { transform: scale(1.04); }
-        .product-featured .img-side .badge {
+        .product-images-row .img-side .badge {
             position: absolute; top: 18px; left: 18px;
             background: var(--olive-dark); color: var(--white-text);
             font-family: 'Poppins', sans-serif; font-size: 0.72rem;
             font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
             padding: 5px 14px; border-radius: 30px;
         }
-        .product-featured .info-side { padding: 40px 40px 40px 0; }
-        .product-featured .info-side h4 {
+        /* Divider between the two images */
+        .product-images-row .img-side + .img-side {
+            border-left: 3px solid var(--sage-mid);
+        }
+        .applications-photo-label {
+            position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+            background: rgba(67,74,35,0.82); color: var(--white-text);
+            font-family: 'Poppins', sans-serif; font-size: 0.72rem;
+            font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 4px 14px; border-radius: 30px;
+            white-space: nowrap;
+        }
+
+        /* Bottom: info panel */
+        .product-info-panel { padding: 40px; }
+        .product-info-panel h4 {
             font-family: 'Syne', sans-serif; font-weight: 800;
             font-size: 1.25rem; color: var(--olive-dark); margin-bottom: 6px;
         }
-        .product-featured .info-side .subtitle {
+        .product-info-panel .subtitle {
             font-size: 0.85rem; color: var(--tan); font-style: italic;
             margin-bottom: 20px; font-weight: 600;
         }
-        .product-featured .info-side p {
+        .product-info-panel p {
             color: var(--olive-text); font-size: 0.93rem;
             line-height: 1.75; margin-bottom: 20px;
         }
@@ -500,9 +542,6 @@
         @media (max-width: 1024px) {
             header h1 { font-size: 7rem; }
             header img.logo { height: 130px; }
-            .product-featured { grid-template-columns: 1fr; }
-            .product-featured .img-side { min-height: 280px; }
-            .product-featured .info-side { padding: 32px; }
             .team-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
@@ -517,11 +556,12 @@
             .why-grid { grid-template-columns: 1fr 1fr; }
             .why-grid-bottom { grid-template-columns: 1fr; max-width: 320px; }
             .content { padding: 50px 16px; }
-            .problem-section { grid-template-columns: 1fr; padding: 24px; gap: 20px; }
-            .problem-section img { aspect-ratio: 16/9; }
-            .product-featured { grid-template-columns: 1fr; }
-            .product-featured .img-side { min-height: 240px; }
-            .product-featured .info-side { padding: 24px; }
+            .problem-section { padding: 24px; }
+            .product-images-row { grid-template-columns: 1fr; }
+            .product-images-row .img-side + .img-side { border-left: none; border-top: 3px solid var(--sage-mid); }
+            .product-images-row { min-height: unset; }
+            .product-images-row .img-side { min-height: 220px; }
+            .product-info-panel { padding: 24px; }
             .mvv-section { padding: 60px 16px; }
             .mvv-grid { grid-template-columns: 1fr; }
             .testimonials-section { padding: 60px 16px; }
@@ -585,8 +625,12 @@
 
     <section class="hero"></section>
 
+    <!-- CHANGE 1: Two-line tagline — never cut on any screen size -->
     <div class="hero-tagline">
-        <h2>Turning Agricultural Waste Into Sustainable Art Materials</h2>
+        <h2>
+            <span class="tagline-line tagline-line-1">Turning Agricultural Waste</span>
+            <span class="tagline-line tagline-line-2">Into Sustainable Art Materials</span>
+        </h2>
     </div>
 
     <!-- ── WHY CHOOSE US ── -->
@@ -608,18 +652,20 @@
     </section>
 
     <!-- ── ABOUT / PROBLEM ── -->
+    <!-- CHANGE 3: Single column — text first, landscape image below -->
     <section class="content" id="about">
         <span class="section-label">The Problem</span>
         <h3 class="section-title">Why It Matters</h3>
         <div class="section-divider" style="margin-left:0;"></div>
         <div class="problem-section">
-            <img src="images/problem.jpg" alt="Agricultural Waste Problem">
             <div class="text">
                 <p>According to the Philippine Rice Research Institute (PhilRice), the Philippines produces 11–18 million tons of rice straw annually — much of which is underutilized or burned by farmers to clear fields, contributing to air pollution and wasted resources.</p>
                 <p>Many art materials today are expensive and not eco-friendly because they are made from wood, plastic, or chemically processed paper. Some artists, especially students, struggle to afford quality canvas paper and materials.</p>
                 <p>Farm by-products like rice straw are largely left in the fields or burned — seen as waste with little value. Meanwhile, eco-friendly art material options remain scarce and inaccessible.</p>
                 <p>Likha-Ani transforms agricultural waste into sustainable art materials, giving new life to farm by-products through creativity, innovation, and eco-friendly design — benefiting farmers, artists, and the planet alike.</p>
             </div>
+            <!-- Landscape problem image sits below the text -->
+            <img src="images/problem.jpg" alt="Agricultural Waste Problem">
         </div>
     </section>
 
@@ -629,12 +675,24 @@
             <span class="section-label">Our Product</span>
             <h3 class="section-title">Canvas Paper Pad</h3>
             <div class="section-divider" style="margin-left:0;"></div>
+
             <div class="product-featured">
-                <div class="img-side">
-                    <img src="images/canvases.jpg" alt="Likha-Ani Canvas Paper Pad">
-                    <span class="badge">🏆 Best in Research</span>
+                <!-- CHANGE 2: Two images side by side at the top -->
+                <div class="product-images-row">
+                    <!-- Left: product photo -->
+                    <div class="img-side">
+                        <img src="images/canvases.jpg" alt="Likha-Ani Canvas Paper Pad">
+                        <span class="badge">🏆 Best in Research</span>
+                    </div>
+                    <!-- Right: applications / artwork photo -->
+                    <div class="img-side">
+                        <img src="images/applications.jpg" alt="Canvas Paper in Use">
+                        <span class="applications-photo-label"><i class="fas fa-palette" style="margin-right:5px;"></i>In Action</span>
+                    </div>
                 </div>
-                <div class="info-side">
+
+                <!-- Info panel below both images -->
+                <div class="product-info-panel">
                     <h4>Canvas Paper Made of Rice (<em>Oryza Sativa</em>) Straw</h4>
                     <p class="subtitle">Art Inspired by Nature</p>
                     <p>A high-quality canvas paper pad crafted from recycled rice straw fibers. Acid-free with a thick, durable textured surface — lightweight, biodegradable, and compatible with a wide range of wet and dry media.</p>
